@@ -97,6 +97,6 @@ if uploaded_file:
 
     st.write("##### Model classes")
     colnames = [f"Class {i}" for i in range(1,len(reg.classes_)+1)] 
-    df3 = pd.DataFrame(reg.classes_, columns = colnames) 
+    df3 = pd.DataFrame([reg.classes_] , columns = colnames) 
     st.dataframe(df3)
  
