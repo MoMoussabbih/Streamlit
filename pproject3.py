@@ -91,9 +91,12 @@ if uploaded_file:
     
     st.write("##### Model intercepts and coefficients")
     coefficients = [list(reg.intercept_) + list(reg.coef_[0])] 
-    st.write(f"##### {coefficients}")
-    #coef_names = ["b0"][f"b{i}" for i in range(1,len(coefficients)+1)]))
     coef_names = ["intercept"] + xi
-    st.write(f"##### {coef_names}")
     df2 = pd.DataFrame(coefficients, columns = coef_names) 
-    st.dataframe(df2) 
+    st.dataframe(df2)
+
+    st.write("##### Model classes")
+    colnames = [f"Class {i}" for i in range(1,len(reg.classes_)+1)] 
+    df3 = pd.DataFrame(reg.classes_, columns = colnames) 
+    st.dataframe(df3)
+ 
