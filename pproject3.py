@@ -91,10 +91,10 @@ if uploaded_file:
     
     st.write("##### Model intercepts and coefficients") 
     intercept = list(reg.intercept_)
-    coefficients = np.array(intercept.extend(list(reg.coef_[0])))
+    coefficients = np.array([intercept.extend(list(reg.coef_[0]))]
     st.write(f"##### {coefficients}")
-    #coef_names = ["b0"].extend([f"b{i}" for i in range(1,len(coefficients)+1)]) 
+    #coef_names = ["b0"].extend([f"b{i}" for i in range(1,len(coefficients)+1)]))
     coef_names = ["intercept"].extend(xi)
-    st.write(f"##### {reg.coef_[0]}")
+    st.write(f"##### {coef_names}")
     df2 = pd.DataFrame(coefficients) 
     st.dataframe(df2) 
