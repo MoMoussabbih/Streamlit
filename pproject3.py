@@ -90,8 +90,8 @@ if uploaded_file:
     
     st.write("##### Model intercepts and coefficients") 
     coefficients = [[reg.intercept_].extend(reg.coef_)]
-    st.write(f"##### {coefficients}")
+    st.write(f"##### {reg.intercept_}")
     coef_names = ["b0"].extend([f"b{i}" for i in range(1,len(coefficients)+1)]) 
-    st.write(f"##### {coef_names}")
+    st.write(f"##### {reg.coef_}")
     df2 = pd.DataFrame(coefficients, columns = coef_names) 
     st.dataframe(df2) 
