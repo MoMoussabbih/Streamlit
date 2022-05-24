@@ -94,7 +94,7 @@ if uploaded_file:
     coefficients = [intercept.extend(list(reg.coef_[0]))]
     st.write(f"##### {coefficients}")
     #coef_names = ["b0"].extend([f"b{i}" for i in range(1,len(coefficients)+1)]))
-    coef_names = ["intercept"].extend(xi)
+    coef_names = list("intercept").extend(xi)
     st.write(f"##### {coef_names}")
-    df2 = pd.DataFrame(coefficients) 
+    df2 = pd.DataFrame(coefficients, columns = coef_names) 
     st.dataframe(df2) 
