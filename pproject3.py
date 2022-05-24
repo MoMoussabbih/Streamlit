@@ -89,8 +89,7 @@ if uploaded_file:
     with mcol4:
         st.metric("Mean squared error", value=f"{mean_squared_error(y_test, reg.predict(X_test)):.7g}")
     
-    st.write("##### Model intercepts and coefficients") 
-    intercept = 
+    st.write("##### Model intercepts and coefficients")
     coefficients = [list(reg.intercept_) + list(reg.coef_[0])] 
     st.write(f"##### {coefficients}")
     #coef_names = ["b0"][f"b{i}" for i in range(1,len(coefficients)+1)]))
