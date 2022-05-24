@@ -90,11 +90,11 @@ if uploaded_file:
         st.metric("Mean squared error", value=f"{mean_squared_error(y_test, reg.predict(X_test)):.7g}")
     
     st.write("##### Model intercepts and coefficients") 
-    intercept = list(reg.intercept_)
-    coefficients = intercept + list(reg.coef_[0])
+    intercept = 
+    coefficients = [list(reg.intercept_) + list(reg.coef_[0])] 
     st.write(f"##### {coefficients}")
-    #coef_names = ["b0"].extend([f"b{i}" for i in range(1,len(coefficients)+1)]))
-    coef_names = list("intercept").extend(xi)
+    #coef_names = ["b0"][f"b{i}" for i in range(1,len(coefficients)+1)]))
+    coef_names = ["intercept"] + xi
     st.write(f"##### {coef_names}")
     df2 = pd.DataFrame(coefficients, columns = coef_names) 
     st.dataframe(df2) 
